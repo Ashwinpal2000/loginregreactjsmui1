@@ -1,9 +1,11 @@
 import { Grid, TextField, Button, Box, Alert } from "@mui/material";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const SendPasswordResetEmail = () => {
+  const navigate = useNavigate()
   const [error, setError] = useState({
     status: false,
-    msg: "",
+    msg: " ",
     type: ""
   })
   const handleSubmit = (e) => {
@@ -16,6 +18,9 @@ const SendPasswordResetEmail = () => {
       console.log(actualData);
       document.getElementById('password-reset-email-form').reset()
       setError({ status: true, msg: "Password Reset Email Sent. Check Your Email !!", type: 'success' })
+      setTimeout(() => {
+        navigate("/reset")
+      }, 3000)
     } else {
       setError({ status: true, msg: "Please Provide Valid Email", type: 'error' })
     }

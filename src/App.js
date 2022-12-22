@@ -10,6 +10,7 @@ import Layout from "./components/pages/Layout";
 function App() {
   return (
     <>
+    
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

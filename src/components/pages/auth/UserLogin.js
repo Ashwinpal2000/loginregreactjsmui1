@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 const UserLogin = () => {
   const [error, setError] = useState({
     status: false,
-    msg: "",
+     msg: "",
     type: ""
   })
   const navigate = useNavigate();
